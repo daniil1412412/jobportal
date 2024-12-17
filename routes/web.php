@@ -38,6 +38,14 @@ Route::group(['account'], function(){
     Route::group(['middleware' => 'auth'], function(){
         Route::get('/account/profile', [AccountController::class, 'profile'])->name('account.profile');
         Route::get('/account/logout', [AccountController::class, 'logout'])->name('account.logout');
+        Route::put('/account/update', [AccountController::class, 'updateProfile'])->name('accoun.updateProfile');
+        Route::post('/account/updatepic', [AccountController::class,'UpdateProfilePic'])->name('account.updatepic');
+        Route::get('/account/create-job', [AccountController::class, 'createJob'])->name('account.createJob');
+        Route::post('/account/save-job', [AccountController::class, 'saveJobs'])->name('account.savejob');
+        Route::get('/account/my-jobs', [AccountController::class, 'myJobs'])->name('account.myJob');
+        Route::get('/account/edit/{jobId}', [AccountController::class, 'editJobs'])->name('account.editJob');
+        Route::post('/account/update-job/{jobId}', [AccountController::class, 'updateJob'])->name('account.updatejob');
+        Route::post('/account/delete-job', [AccountController::class, 'deleteJob'])->name('account.deleteJob');
     });
 
 });
