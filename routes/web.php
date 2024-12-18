@@ -3,6 +3,7 @@
 use App\Http\Controllers\AccountController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JobsController;
 use App\Http\Controllers\LoginController;
 
 
@@ -23,7 +24,7 @@ use App\Http\Controllers\LoginController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
+Route::get('/jobs', [JobsController::class,'index'])->name('jobs');
 
 
 Route::group(['account'], function(){
